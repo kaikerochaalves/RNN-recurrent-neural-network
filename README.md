@@ -1,1 +1,1 @@
-# RNN-recurrent-neural-network-
+# RNN (recurrent neural network)
