@@ -200,10 +200,7 @@ checkpoint_cb = ModelCheckpoint(f'RandomSearchResults/{Serie}.h5', save_best_onl
 early_stopping_cb = EarlyStopping(patience=10,restore_best_weights=True)
 
 # Train the model
-history = model.fit(X_train, y_train, epochs = 100, validation_data=(X_test, y_test), callbacks=[checkpoint_cb, early_stopping_cb])
-
-# Compute the mse error
-#mse_test = model.evaluate(X_test, y_test)
+history = model.fit(X_train, y_train, epochs = 100, validation_data=(X_val, y_val), callbacks=[checkpoint_cb, early_stopping_cb])
 
 # Implement the prediction method
 y_pred = model.predict(X_test)
